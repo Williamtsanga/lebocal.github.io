@@ -41,9 +41,9 @@ class Footer extends React.Component {
                                     <div>Email <span>*</span></div>
                                     <input type='email' />
                                 </label>
-                                <label>
+                                <label className="textarea" >
                                     <div>Message <span>*</span></div>
-                                    <textarea className="textarea" cols="52" rows="10" ></textarea>
+                                    <textarea cols="43" rows="10" ></textarea>
                                 </label>
                                 <input type="submit" value="Submit" />
                             </form>

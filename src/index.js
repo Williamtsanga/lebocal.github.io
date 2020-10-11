@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import {BrowserRouter} from 'react-router-dom'
 
-import '../assets/css/index.css'
+import '../assets/css/mob.css'
 import Header from '../components/Header'
 import Main from '../components/Main'
 import Footer from '../components/Footer'

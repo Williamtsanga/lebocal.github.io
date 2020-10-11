@@ -1,4 +1,5 @@
 body {
+    z-index: 1;
     margin: 0;
     padding: 0;
 }
@@ -8,93 +9,84 @@ html,body {
 a{
     text-decoration: none;
 }
-
-.nav {
-    border-bottom: 2px red solid;
-    display: grid;
-    grid-template-columns: .5fr 1fr .5fr;
-    // height: 70px;
-    
-}
-
-
-.logo {
-    // margin-left: 2vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.auth {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    a {        
-        span {
-            color: black;
-            font-size: 20px;
-            font-weight: bold;
-            &:hover{
-                color: #61dafb;
-        }
-    }
-    }
+.logo-img {
+    width: 40px;
+    height: 45px;
 }
 nav {
-    display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
+    ul {
 
-        ul {
-
-            display: flex;
-            margin: 0;
             list-style-type: none;
-            height: inherit;
-        
-    }
-    li {
-        padding: 32px 0px;
-        border: 0;
-        // &:last-child{
-            // border-right: 1px wheat solid;
-            margin: 0 2px;
-
-        a {
-            height: inherit;
-            color: black;
-            font-size: 1.3vw;
-            // border: 1px green solid;
-            font-weight: bold;
-            padding: 32px;
-            &:hover{
-                color: #1f0e0e;
-                border-bottom: 2px solid white;
-                background-color: rgb(161, 97, 97);
-            }
-
+            padding: 0;
+            margin: 0;
         }
+            li {
+                padding: 10px 0;
+                display: block;
+                // position: absolute;
+                text-align: center;
+                    &:hover{
+                        color: #1f0e0e;
+                        background-color: rgb(161, 97, 97);
+                    }
+
+                a{
+                    // border:1px red solid;
+                    position: relative;
+                    font-size: 20px;
+                    width: 30rem;
+                    color:white;
+        
+                }
+            
+    }
+}
+.mobil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: greenyellow;
+    cursor: pointer;
+}
+.nav {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr .3fr .2fr;
+    background-color: rgb(41, 37, 39);
+}
+.mob-nav {
+    background-color: rgb(41, 37, 39);
+    position: relative;
+    display: block;
+    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    z-index: 5;
+    transition: visibility 2s, opacity 2s;
+}
+.dispNone {
+display: none;
+}
+.auth{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .login {
+        color: white;
+        font-weight: 900;
+        font-size: 20px;
     }
 }
 .onLink{
     color: #1f0e0e;
-    border-bottom: 2px solid white;
     background-color: rgb(161, 97, 97);
 }
-.head {
-    // background-color: #282c34;
-    img {
-        display: block;
-        height: auto;
-        width: auto;
-        // max-width:1024px;
-        max-height:395px;
-    }
-}
+
+
 footer {
     display: grid;
-    grid-template-rows: 14vw 1fr .1fr;
+    grid-template-rows: 6vw 1fr .1fr;
     margin-bottom: -50px;
 }
 .newsletter {
@@ -226,12 +218,69 @@ footer {
 }
 
 }
-.logo-img {
-    margin-top: 2px;
-    width:4rem;
-    height:70px;
-}
-.mobil {
-    display: none;
-}
 
+@media only screen and (min-width: 922px) {
+    .logo-img {
+        margin-top: 2px;
+        width:4rem;
+        height:70px;
+    }
+    .mobil {
+        display: none;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav {
+        border-bottom: 2px red solid;
+        display: grid;
+        grid-template-columns: .5fr 1fr .5fr;
+        
+    }
+    
+    
+    nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+    
+            ul {
+    
+                display: flex;
+                margin: 0;
+                height: inherit;
+            
+        }
+        li {
+            padding: 32px 0px;
+            border: 0;
+                margin: 0 2px;
+    
+            a {
+                height: inherit;
+                color: white;
+                font-size: 1.3vw;
+                // border: 1px green solid;
+                font-weight: bold;
+                padding: 32px;
+                &:hover{
+                    color: #1f0e0e;
+                    border-bottom: 2px solid white;
+                    background-color: rgb(161, 97, 97);
+                }
+    
+            }
+        }
+    }
+    
+}
+@media only screen and (max-width: 768px) {
+    footer {
+        grid-template-rows: 2vw 1fr .1fr;
+    }
+    
+}
