@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 class Footer extends React.Component {
     render(){
@@ -16,19 +17,36 @@ class Footer extends React.Component {
                 </div>
                 <div className="foot-grid">
                     <div className="grids" >
+                    <h2>Latest article</h2>
                         <div>
-                            <h3>Latest article</h3>
+                            
                         Lorem Ipsum est un texte d'espace réservé couramment utilisé dans les industries graphique, imprimée et éditoriale pour prévisualiser les mises en page et les maquettes visuelles
                         </div>
                     </div>
                     <div className="grids" >
-                        <div>
+                    <h2>Docs</h2>
+                        <div>                   
                         Lorem Ipsum est un texte d'espace réservé couramment utilisé dans les industries graphique, imprimée et éditoriale pour prévisualiser les mises en page et les maquettes visuelles
                         </div>
                     </div>
                     <div className="grids" >
-                        <div>
-                        Lorem Ipsum est un texte d'espace réservé couramment utilisé dans les industries graphique, imprimée et éditoriale pour prévisualiser les mises en page et les maquettes visuelles
+                        <h2>Contact us</h2>
+                        <div className='contact' >
+                            <form>
+                                <label>
+                                    <div>First Last name <span>*</span></div>
+                                    <input type='text' />
+                                </label>
+                                <label>
+                                    <div>Email <span>*</span></div>
+                                    <input type='email' />
+                                </label>
+                                <label>
+                                    <div>Message <span>*</span></div>
+                                    <textarea className="textarea" cols="52" rows="10" ></textarea>
+                                </label>
+                                <input type="submit" value="Submit" />
+                            </form>
                         </div>
                     </div>
                 </div>

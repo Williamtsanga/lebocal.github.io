@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Nav from './Nav'
+import images from '../assets/images/3.jpg'
 
 class Header extends React.Component {
     render(){
@@ -8,7 +9,7 @@ class Header extends React.Component {
             <header>
                 <Nav />
                 <div className="head" >
-                    <img src='../assets/images/3.jpg' alt="hum" style={{width:"100%",height:"400"}} />
+                    <img src={images} alt="hum" style={{width:"100%",height:"400"}} />
                 </div>
             </header>
         );
