@@ -17,15 +17,16 @@ a {
 }
 
 .logo {
+  margin-left: 10vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .logo a {
@@ -79,20 +80,123 @@ nav ul {
 }
 
 nav li {
-  border: 2px dotted red;
+  padding: 20px 20px;
 }
 
 nav li a {
   color: white;
   font-weight: lighter;
+  padding-bottom: 5px;
 }
 
 nav li a:hover {
   color: #61dafb;
+  border-bottom: 3px solid white;
 }
 
-.head {
+.head img {
+  display: block;
+  height: auto;
+  width: auto;
+  max-height: 395px;
+}
+
+footer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: .2fr 1fr .1fr;
+      grid-template-rows: .2fr 1fr .1fr;
+}
+
+.newsletter {
   background-color: #282c34;
-  height: 22rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.newsletter .slog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 20px;
+}
+
+.newsletter .slog > div {
+  text-align: center;
+}
+
+.newsletter .but {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+}
+
+.newsletter .but button {
+  color: white;
+  background-color: #1a2f5e;
+  border-radius: 50px;
+  border: 0;
+  padding: 20px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.newsletter .but button:hover {
+  background-color: #27292e;
+}
+
+.text {
+  color: white;
+}
+
+.text-bold {
+  font-weight: 900;
+  font-size: larger;
+  font-size: 35px;
+}
+
+.text-light {
+  font-size: 20px;
+}
+
+.foot-grid {
+  display: -ms-grid;
+  display: grid;
+  height: 30rem;
+  background-color: #20232a;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.foot-grid .grids {
+  border: 1px green solid;
+}
+
+.copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #282c34;
 }
 /*# sourceMappingURL=index.css.map */

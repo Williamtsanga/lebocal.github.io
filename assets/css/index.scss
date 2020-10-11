@@ -17,9 +17,10 @@ a{
 
 
 .logo {
+    margin-left: 10vw;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     a {
        
 
@@ -57,18 +58,14 @@ nav {
         
     }
     li {
-
-        border: 2px dotted red;
-   
-        // display: inline;
-        // padding: 20px 40px;
-
+        padding: 20px 20px;
         a {
-            // padding: 20px 20px;
             color: white;
             font-weight: lighter;
+            padding-bottom: 5px;
             &:hover{
                 color: #61dafb;
+                border-bottom: 3px solid white;
             }
 
         }
@@ -76,6 +73,81 @@ nav {
 }
 
 .head {
+    // background-color: #282c34;
+    img {
+        display: block;
+        height: auto;
+        width: auto;
+        // max-width:1024px;
+        max-height:395px;
+    }
+}
+footer {
+    display: grid;
+    grid-template-rows: .2fr 1fr .1fr;
+}
+.newsletter {
     background-color: #282c34;
-    height: 22rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+.slog {
+        
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 20px;
+        > div {
+            text-align: center;
+        }
+    }
+.but {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-left: 20px;
+        button {
+            color: white;
+            background-color: #1a2f5e;
+            border-radius: 50px;
+            border: 0;
+            padding:20px;
+            font-weight: 800;
+            font-size: 20px;
+            &:hover{
+                background-color: #27292e;
+            }
+
+        }
+        
+    }
+}
+.text {
+    color: white;
+}
+.text-bold {
+    font-weight: 900;
+    font-size: larger;
+    font-size: 35px;
+
+}
+.text-light {
+    font-size: 20px;
+    
+}
+.foot-grid {
+    display: grid;
+    height: 30rem;
+    background-color: #20232a;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    // grid-template-columns: repeat(auto-fill,minmax(360px, 1fr)); 
+    .grids {
+        border: 1px green solid;
+    }
+}
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282c34;
 }

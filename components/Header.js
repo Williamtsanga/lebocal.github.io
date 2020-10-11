@@ -8,7 +8,7 @@ class Header extends React.Component {
             <header>
                 <Nav />
                 <div className="head" >
-                    header
+                    <img src='../assets/images/3.jpg' alt="hum" style={{width:"100%",height:"400"}} />
                 </div>
             </header>
         );
