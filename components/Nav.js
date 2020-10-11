@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-import logo from '../assets/images/logo.jpeg'
+import logo from '../assets/images/logoC.jpeg'
 
 class Nav extends React.Component {
     render(){
@@ -12,7 +12,7 @@ class Nav extends React.Component {
                     </div>
                     <nav>
                     <ul>
-                        <li><Link to={'/'} >Home</Link></li>
+                        <li><Link to={'/'} className={'onLink'} >Home</Link></li>
                         <li><Link to={'/'} >Magisin</Link></li>
                         <li><Link to={'/'} >Documents</Link></li>
                         <li><Link to={'/'} >About us</Link></li>

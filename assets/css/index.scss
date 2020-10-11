@@ -2,13 +2,15 @@ body {
     margin: 0;
     padding: 0;
 }
-
+html,body {
+    height:100%;
+}
 a{
     text-decoration: none;
 }
 
 .nav {
-    background-color: #20232a;
+    border-bottom: 2px red solid;
     display: grid;
     grid-template-columns: .5fr 1fr .5fr;
     // height: 70px;
@@ -17,14 +19,14 @@ a{
 
 
 .logo {
-    margin-left: 10vw;
+    // margin-left: 2vw;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     a {
        
 
-    color: wheat;
+    color: black;
     font-size: 20px;
 }
 }
@@ -35,7 +37,7 @@ a{
         justify-content: center;
     a {        
         span {
-            color: white;
+            color: black;
             font-size: 20px;
             font-weight: bold;
             &:hover{
@@ -55,28 +57,35 @@ nav {
             display: flex;
 
             list-style-type: none;
+            height: inherit;
         
     }
     li {
-        // padding: 20px 20px;
-        // border-left: 1px wheat solid;
+        padding: 0 2px;
         // &:last-child{
         //     border-right: 1px wheat solid;
 
         // }
         a {
-            color: white;
+            height: inherit;
+            color: black;
+            // border: 1px green solid;
             font-weight: bold;
-            padding-bottom: 5px;
+            padding: 28px;
             &:hover{
-                color: #61dafb;
-                border-bottom: 3px solid white;
+                color: #1f0e0e;
+                border-bottom: 4px solid white;
+                background-color: rgb(161, 97, 97);
             }
 
         }
     }
 }
-
+.onLink{
+    color: #1f0e0e;
+    border-bottom: 4px solid white;
+    background-color: rgb(161, 97, 97);
+}
 .head {
     // background-color: #282c34;
     img {
@@ -93,7 +102,7 @@ footer {
     margin-bottom: -50px;
 }
 .newsletter {
-    background-color: #282c34;
+    background-color: #cfd3db;
     display: grid;
     grid-template-columns: 1fr 1fr;
 .slog {
@@ -144,7 +153,7 @@ footer {
 .foot-grid {
     display: grid;
     height: 32rem;
-    background-color: #20232a;
+    background-color: #34333f;
     grid-template-columns: 1fr 1fr 1fr;
     
     // grid-template-columns: repeat(auto-fill,minmax(360px, 1fr)); 
@@ -215,6 +224,7 @@ footer {
 
 }
 .logo-img {
-    width:50px;
-    height:inherit;
+    margin-top: 2px;
+    width:4rem;
+    height:70px;
 }
