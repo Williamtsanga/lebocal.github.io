@@ -1,7 +1,7 @@
 body {
-  z-index: 1;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto';
 }
 
 html, body {
@@ -12,73 +12,213 @@ a {
   text-decoration: none;
 }
 
-.logo-img {
-  width: 40px;
-  height: 45px;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav li {
-  padding: 10px 0;
-  display: block;
-  text-align: center;
-}
-
-nav li:hover {
-  color: #1f0e0e;
-  background-color: #a16161;
-}
-
-nav li a {
+header {
   position: relative;
-  font-size: 20px;
-  width: 30rem;
-  color: white;
+  overflow: hidden;
 }
 
-.mobil {
+.logo-img {
+  width: 80px;
+  height: 5rem;
+}
+
+.blab {
+  height: 5rem;
+}
+
+.nav__toggle {
+  z-index: 10;
+  outline: 0;
+  position: absolute;
+  background: transparent;
+  display: inline-block;
+  border-radius: 50%;
+  right: 26px;
+  top: 15px;
+  -webkit-transition: background-color .15s linear;
+  transition: background-color .15s linear;
+}
+
+.nav__toggle:hover, .nav__toggle:focus {
+  background-color: rgba(158, 143, 143, 0.5);
+}
+
+.nav__menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: greenyellow;
-  cursor: pointer;
+  height: calc(100vh - 5rem);
+  position: relative;
+  padding: 0;
+  z-index: 6;
+  visibility: hidden;
+  list-style-type: none;
 }
 
-.nav {
+.nav__item {
+  opacity: 0;
+  -webkit-transition: all 0.3s cubic-bezier(0, 0.995, 0.99, 1) 0.3s;
+  transition: all 0.3s cubic-bezier(0, 0.995, 0.99, 1) 0.3s;
+}
+
+.nav__item:nth-child(1) {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+}
+
+.nav__item:nth-child(2) {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+}
+
+.nav__item:nth-child(3) {
+  -webkit-transform: translateY(-150px);
+          transform: translateY(-150px);
+}
+
+.nav__item:nth-child(4) {
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
+}
+
+.nav__item:nth-child(5) {
+  -webkit-transform: translateY(-250px);
+          transform: translateY(-250px);
+}
+
+.nav__link {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  padding: 1rem;
+}
+
+.nav__link:hover, .nav__link:focus {
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.menuicon {
+  display: block;
+  cursor: pointer;
+  color: white;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menuicon__bar, .menuicon__circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.menuicon__bar {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: -webkit-transform .252s ease-in-out;
+  transition: -webkit-transform .252s ease-in-out;
+  transition: transform .252s ease-in-out;
+  transition: transform .252s ease-in-out, -webkit-transform .252s ease-in-out;
+}
+
+.menuicon__circle {
+  -webkit-transition: stroke-dashoffset .3s linear .1s;
+  transition: stroke-dashoffset .3s linear .1s;
+  stroke-dashoffset: 144.51326;
+  stroke-dasharray: 144.51326;
+}
+
+.splash {
+  position: absolute;
+  top: 54px;
+  right: 63px;
+  width: 1px;
+  height: 1px;
+}
+
+.splash::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #368887;
+  width: 284vmax;
+  height: 284vmax;
+  top: -144vmax;
+  left: -140vmax;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  transition: -webkit-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  transition: transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06), -webkit-transform 0.5s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  will-change: transform;
+}
+
+.nav--open > .splash::after {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.nav--open .menuicon {
+  color: white;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.nav--open .menuicon__circle {
+  stroke-dashoffset: 0;
+}
+
+.nav--open .menuicon__bar:nth-child(1), .nav--open .menuicon__bar:nth-child(4) {
+  opacity: 0;
+}
+
+.nav--open .menuicon__bar:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.nav--open .menuicon__bar:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.nav--open .nav__menu {
+  visibility: visible;
+}
+
+.nav--open .nav__item {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.Main-nav {
   position: relative;
-  overflow: hidden;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr .3fr .2fr;
-      grid-template-columns: 1fr .3fr .2fr;
+  -ms-grid-columns: 1fr .9fr;
+      grid-template-columns: 1fr .9fr;
   background-color: #292527;
-}
-
-.mob-nav {
-  background-color: #292527;
-  position: relative;
-  display: block;
-  overflow: hidden;
-  visibility: visible;
-  opacity: 1;
-  z-index: 5;
-  -webkit-transition: visibility 2s, opacity 2s;
-  transition: visibility 2s, opacity 2s;
-}
-
-.dispNone {
-  display: none;
+  height: 5rem;
 }
 
 .auth {
@@ -272,9 +412,11 @@ footer {
 
 @media only screen and (min-width: 922px) {
   .logo-img {
-    margin-top: 2px;
-    width: 4rem;
-    height: 70px;
+    width: 5rem;
+    height: 78px;
+  }
+  header {
+    position: relative;
   }
   .mobil {
     display: none;
@@ -290,7 +432,7 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .nav {
+  .Main-nav {
     border-bottom: 2px red solid;
     display: -ms-grid;
     display: grid;
@@ -318,6 +460,7 @@ footer {
     display: flex;
     margin: 0;
     height: inherit;
+    list-style-type: none;
   }
   nav li {
     padding: 32px 0px;
@@ -327,7 +470,9 @@ footer {
   nav li a {
     height: inherit;
     color: white;
-    font-size: 1.3vw;
+    font-size: 1vw;
+    text-decoration: none;
+    text-transform: uppercase;
     font-weight: bold;
     padding: 32px;
   }

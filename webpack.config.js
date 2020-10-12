@@ -1,7 +1,7 @@
 const path = require('path');
 // const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const env = process.env.NODE_ENV;
 
@@ -23,8 +23,11 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/
-            },
+                exclude: /node_modules/,
+                query: {
+                  plugins: ['transform-class-properties']
+                }
+              },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
@@ -59,10 +62,10 @@ module.exports = {
             filename: 'index.html',
             inject: 'body'
         }),
-        // new MiniCssExtractPlugin({
-        //     filename: '[name].css',
-        //     chunkFilename: '[id].css'
-        //   }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css'
+          }),
         //   new OptimizeCssAssetsPlugin({
         //     cssProcessorPluginOptions: {
         //       preset: ['default', { discardComments: { removeAll: true } }]
