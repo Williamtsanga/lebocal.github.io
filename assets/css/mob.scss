@@ -48,8 +48,8 @@ a{
         top: 15px;
         transition: background-color .15s linear;
 
-        &:hover,
-        &:focus {
+        &:hover
+         {
             background-color: rgba(158, 143, 143, 0.5);
         }
     }
@@ -84,8 +84,7 @@ a{
     text-decoration: none;
     padding: 1rem;
 
-    &:hover,
-    &:focus {
+    &:hover {
         outline: 0;
         color: #1f0e0e;
         background-color: rgb(161, 97, 97);
@@ -378,9 +377,10 @@ footer {
     width: 96%;
     textarea {
         width: inherit;
-    resize: none;
-    border: 0;
-    padding: 5px;
+        resize: none;
+        border: 0;
+        padding: 5px;
+        font-size: 16px;
     &:focus {
         outline: none;
         background-color: #b2bbcc;

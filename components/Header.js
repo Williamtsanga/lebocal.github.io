@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, NavLink, withRouter} from 'react-router-dom'
 import logo from '../assets/images/logoC.jpeg'
 
 class Header extends React.Component {
@@ -11,6 +11,7 @@ class Header extends React.Component {
             match : window.matchMedia("(max-width: 928px)").matches,
             mobNav: {
                 active: false,
+                Class: ''
             },
 
         }
@@ -36,16 +37,16 @@ class Header extends React.Component {
 
     }
         handleActive = (e) => {
-            console.log(e.current.children,window.location.pathname)
+            console.log(e.target,window.location.pathname)
         }
         addDet () {
             return(
-                <nav >
-                <ul ref={this.DeskUl} onClick={() => this.handleActive(this.DeskUl)}>
-                    <li   ><Link className={'active'} to={'/'}  >Home</Link></li>
-                    <li><Link to={'/mag'} >Magisin</Link></li>
-                    <li><Link to={'/doc'} >Documents</Link></li>
-                    <li><Link to={'/about'} >About us</Link></li>
+                <nav>
+                <ul>
+                    <li><NavLink activeClassName='active' exact to={'/'}  >Home</NavLink></li>
+                    <li><NavLink activeClassName='active' to={'/mag'} >Magisin</NavLink></li>
+                    <li><NavLink activeClassName='active' to={'/doc'} >Documents</NavLink></li>
+                    <li><NavLink activeClassName='active' to={'/about'} >About us</NavLink></li>
                 </ul>
                 </nav>
             )
@@ -56,10 +57,10 @@ class Header extends React.Component {
             return (
             <nav id="nav" className={`nav nav--${Class}`} role="navigation" >
                 <ul className="nav__menu" id="menu" tabIndex="-1" ref={this.MobUl} aria-label="main navigation" hidden>
-                    <li className="nav__item" onClick={() => this.handleActive(this.MobUl)} ><Link className={"nav__link active"} to={'/'}  >Home</Link></li>
-                    <li className="nav__item"><Link className={"nav__link"} to={'/mag'} >Magisin</Link></li>
-                    <li className="nav__item"><Link className={"nav__link"} to={'/doc'} >Documents</Link></li>
-                    <li className="nav__item"><Link className={"nav__link"} to={'/about'} >About us</Link></li>
+                    <li className="nav__item"  ><NavLink exact activeClassName='active' className={"nav__link"} to={'/'}  >Home</NavLink></li>
+                    <li className="nav__item"><NavLink activeClassName='active' className={"nav__link"} to={'/mag'} >Magisin</NavLink></li>
+                    <li className="nav__item"><NavLink activeClassName='active' className={"nav__link"} to={'/doc'} >Documents</NavLink></li>
+                    <li className="nav__item"><NavLink activeClassName='active' className={"nav__link"} to={'/about'} >About us</NavLink></li>
                 </ul>
                 <div className="splash" ></div>
                 <div onClick={this.handleNavClick} className="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
@@ -82,14 +83,16 @@ class Header extends React.Component {
         handleNavClick = () => {
             const { mobNav : {active} } = this.state
             if (active) {
-
+                document.querySelector("html").style.overflow = ''
+                document.body.style.overflow = ''
                 this.MobUl.current.hidden = active
                 this.setState({ mobNav : {
                     active:false,
                     Class:''
                 } })
             } else {
-
+                document.querySelector("html").style.overflow = 'hidden'
+                document.body.style.overflow = 'hidden'
                 this.MobUl.current.hidden = active
                 this.setState({ mobNav : {
                     active:true,
@@ -99,6 +102,8 @@ class Header extends React.Component {
         }
 
     render(){
+        
+
         return(
             <header className="blab" >
                 <div className="Main-nav" >
@@ -118,4 +123,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header
+export default withRouter(Header)
