@@ -2,23 +2,23 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../assets/images/logoC.jpeg'
 
-class Nav extends React.Component {
+class Header extends React.Component {
     constructor(props){
         super(props);
-        this.stroke = React.createRef()
+        this.MobUl = React.createRef()
+        this.DeskUl = React.createRef()
         this.state = {
             match : window.matchMedia("(max-width: 928px)").matches,
             mobNav: {
                 active: false,
-                Class:''
             },
+
         }
+        // this.elmnt = React.createElement('div',{}, "html,body{background-color:red}")
 
     }
     componentDidMount(){
         window.addEventListener('resize', this.updateDim)
-
-        // window.matchMedia("(max-width: 922px)").addListener(handler)
     }
     updateDim = (e) => {
         const {match} = this.state
@@ -35,14 +35,17 @@ class Nav extends React.Component {
         }
 
     }
+        handleActive = (e) => {
+            console.log(e.current.children,window.location.pathname)
+        }
         addDet () {
             return(
                 <nav >
-                <ul >
-                    <li><Link  to={'/'}  >Home</Link></li>
-                    <li><Link  to={'/'} >Magisin</Link></li>
-                    <li><Link to={'/'} >Documents</Link></li>
-                    <li><Link to={'/'} >About us</Link></li>
+                <ul ref={this.DeskUl} onClick={() => this.handleActive(this.DeskUl)}>
+                    <li   ><Link className={'active'} to={'/'}  >Home</Link></li>
+                    <li><Link to={'/mag'} >Magisin</Link></li>
+                    <li><Link to={'/doc'} >Documents</Link></li>
+                    <li><Link to={'/about'} >About us</Link></li>
                 </ul>
                 </nav>
             )
@@ -52,11 +55,11 @@ class Nav extends React.Component {
             const { mobNav : {Class} } = this.state
             return (
             <nav id="nav" className={`nav nav--${Class}`} role="navigation" >
-                <ul className="nav__menu" id="menu" tabIndex="-1" ref={this.stroke} aria-label="main navigation" hidden>
-                    <li className="nav__item" ><Link className={"nav__link"} to={'/'}  >Home</Link></li>
-                    <li className="nav__item"><Link className={"nav__link"} to={'/'} >Magisin</Link></li>
-                    <li className="nav__item"><Link className={"nav__link"} to={'/'} >Documents</Link></li>
-                    <li className="nav__item"><Link className={"nav__link"} to={'/'} >About us</Link></li>
+                <ul className="nav__menu" id="menu" tabIndex="-1" ref={this.MobUl} aria-label="main navigation" hidden>
+                    <li className="nav__item" onClick={() => this.handleActive(this.MobUl)} ><Link className={"nav__link active"} to={'/'}  >Home</Link></li>
+                    <li className="nav__item"><Link className={"nav__link"} to={'/mag'} >Magisin</Link></li>
+                    <li className="nav__item"><Link className={"nav__link"} to={'/doc'} >Documents</Link></li>
+                    <li className="nav__item"><Link className={"nav__link"} to={'/about'} >About us</Link></li>
                 </ul>
                 <div className="splash" ></div>
                 <div onClick={this.handleNavClick} className="nav__toggle" role="button" aria-expanded="false" aria-controls="menu">
@@ -77,15 +80,17 @@ class Nav extends React.Component {
         }
 
         handleNavClick = () => {
-            const { mobNav : {active , Class} } = this.state
+            const { mobNav : {active} } = this.state
             if (active) {
-                this.stroke.current.hidden = active
+
+                this.MobUl.current.hidden = active
                 this.setState({ mobNav : {
                     active:false,
                     Class:''
                 } })
             } else {
-                this.stroke.current.hidden = active
+
+                this.MobUl.current.hidden = active
                 this.setState({ mobNav : {
                     active:true,
                     Class:'open'
@@ -94,9 +99,8 @@ class Nav extends React.Component {
         }
 
     render(){
-        const {mobNav : { comp, Class }} = this.state
         return(
-            <div className="blab" >
+            <header className="blab" >
                 <div className="Main-nav" >
                 <div className="logo" >
                     <img alt="Logo" className="logo-img" src={logo} />
@@ -106,14 +110,12 @@ class Nav extends React.Component {
                             <div className="auth" >
                                 <Link to={'/'} className={"login"} ><span>Log In</span></Link>
                             </div>
-
-                    
-            </div>
+                </div>
                 {this.state.match ? this.addNav() :''}
 
-            </div>
+            </header>
         );
     }
 }
 
-export default Nav
+export default Header

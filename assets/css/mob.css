@@ -12,11 +12,6 @@ a {
   text-decoration: none;
 }
 
-header {
-  position: relative;
-  overflow: hidden;
-}
-
 .logo-img {
   width: 80px;
   height: 5rem;
@@ -51,9 +46,6 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   height: calc(100vh - 5rem);
   position: relative;
   padding: 0;
@@ -94,6 +86,7 @@ header {
 }
 
 .nav__link {
+  color: white;
   display: block;
   text-align: center;
   text-transform: uppercase;
@@ -105,7 +98,8 @@ header {
 
 .nav__link:hover, .nav__link:focus {
   outline: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  color: #1f0e0e;
+  background-color: #a16161;
 }
 
 .menuicon {
@@ -156,7 +150,7 @@ header {
   display: block;
   position: absolute;
   border-radius: 50%;
-  background-color: #368887;
+  background-color: #292527;
   width: 284vmax;
   height: 284vmax;
   top: -144vmax;
@@ -215,8 +209,8 @@ header {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr .9fr;
-      grid-template-columns: 1fr .9fr;
+  -ms-grid-columns: 1fr 63vw;
+      grid-template-columns: 1fr 63vw;
   background-color: #292527;
   height: 5rem;
 }
@@ -239,7 +233,8 @@ header {
   font-size: 20px;
 }
 
-.onLink {
+.active {
+  outline: none;
   color: #1f0e0e;
   background-color: #a16161;
 }
@@ -247,8 +242,8 @@ header {
 footer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 6vw 1fr .1fr;
-      grid-template-rows: 6vw 1fr .1fr;
+  -ms-grid-rows: 15vmin 1fr .1fr;
+      grid-template-rows: 15vmin 1fr .1fr;
   margin-bottom: -50px;
 }
 
@@ -295,9 +290,9 @@ footer {
   background-color: #1a2f5e;
   border-radius: 50px;
   border: 0;
-  padding: 20px;
+  padding: 2vmin;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 2vmin;
 }
 
 .newsletter .but button:hover {
@@ -311,12 +306,11 @@ footer {
 
 .text-bold {
   font-weight: 900;
-  font-size: larger;
-  font-size: 35px;
+  font-size: 2vmax;
 }
 
 .text-light {
-  font-size: 20px;
+  font-size: 2vmax;
 }
 
 .foot-grid {
@@ -485,8 +479,8 @@ footer {
 
 @media only screen and (max-width: 768px) {
   footer {
-    -ms-grid-rows: 2vw 1fr .1fr;
-        grid-template-rows: 2vw 1fr .1fr;
+    -ms-grid-rows: 12vw 1fr .1fr;
+        grid-template-rows: 12vw 1fr .1fr;
   }
 }
 /*# sourceMappingURL=mob.css.map */

@@ -4,6 +4,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto';
+
+    
 }
 
 @function circumference($r){
@@ -21,12 +23,12 @@ a{
 //     flex-direction: column;
 //     position: relative;
 // }
-header {
-    position: relative;
-    // height: $MainNav_height;
-    overflow: hidden;
+// header {
+//     position: relative;
+//     // height: $MainNav_height;
+//     overflow: hidden;
 
-}
+// }
 .logo-img {
     width: 80px;
     height: $MainNav_height;
@@ -54,7 +56,7 @@ header {
 &__menu {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    // justify-content: center;
     height: calc(100vh - #{$MainNav_height} );
     // height: 100vh;
     position: relative;
@@ -73,7 +75,7 @@ header {
     }
 }
 &__link {
-    // color: white;
+    color: white;
     display: block;
     text-align: center;
     text-transform: uppercase;
@@ -85,12 +87,17 @@ header {
     &:hover,
     &:focus {
         outline: 0;
-        background-color: rgba(0,0,0,0.2);
+        color: #1f0e0e;
+        background-color: rgb(161, 97, 97);
+
     }
 
 }
 }
-
+// .active {
+//     outline: 0;
+//     background-color: rgba(0,0,0,0.2);
+// }
 .menuicon {
     display: block;
     cursor: pointer;
@@ -129,7 +136,7 @@ header {
         display: block;
         position: absolute;
         border-radius: 50%;
-        background-color: #368887;
+        background-color: rgb(41, 37, 39);
 
         width: 284vmax;
         height: 284vmax;
@@ -214,7 +221,7 @@ header {
 .Main-nav {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr .9fr;
+    grid-template-columns: 1fr 63vw;
     background-color: rgb(41, 37, 39);
     height: $MainNav_height;
 }
@@ -241,7 +248,8 @@ header {
         font-size: 20px;
     }
 }
-.onLink{
+.active{
+    outline: none;
     color: #1f0e0e;
     background-color: rgb(161, 97, 97);
 }
@@ -249,7 +257,7 @@ header {
 
 footer {
     display: grid;
-    grid-template-rows: 6vw 1fr .1fr;
+    grid-template-rows: 15vmin 1fr .1fr;
     margin-bottom: -50px;
 }
 .newsletter {
@@ -276,9 +284,9 @@ footer {
             background-color: #1a2f5e;
             border-radius: 50px;
             border: 0;
-            padding:20px;
+            padding:2vmin;
             font-weight: 800;
-            font-size: 20px;
+            font-size: 2vmin;
             &:hover{
                 background-color: #27292e;
                 cursor: pointer;
@@ -293,12 +301,11 @@ footer {
 }
 .text-bold {
     font-weight: 900;
-    font-size: larger;
-    font-size: 35px;
+    font-size: 2vmax;
 
 }
 .text-light {
-    font-size: 20px;
+    font-size: 2vmax;
     
 }
 .foot-grid {
@@ -450,7 +457,7 @@ footer {
 }
 @media only screen and (max-width: 768px) {
     footer {
-        grid-template-rows: 2vw 1fr .1fr;
+        grid-template-rows: 12vw 1fr .1fr;
     }
     
 }
