@@ -1,5 +1,5 @@
 import React from 'react'
-import {Route,Switch} from 'react-router-dom'
+import {Route,Switch,Link} from 'react-router-dom'
 
 import Doc from '../pages/Doc'
 import Main from '../pages/Main'
@@ -13,7 +13,7 @@ class App extends React.Component {
                         <Route exact path={"/"} component={Main} />
                         <Route path={"/doc"} component={Doc} />
                         <Route path={"/about"} component={About} />
-                        <Route render={({location}) => (<h1>Error no location found at <code>{location.pathname}</code> </h1>) } />
+                        <Route render={({location}) => (<h1>Error no location found at <code>{location.pathname} <br></br> Go to <Link to={'/'}>Home</Link> </code> </h1>) } />
                     </Switch>
             // </div>
         );
