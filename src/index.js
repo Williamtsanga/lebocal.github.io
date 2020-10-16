@@ -2,13 +2,10 @@ import React from "react"
 import ReactDOM from "react-dom"
 import {BrowserRouter} from 'react-router-dom'
 
-import '../assets/css/mob.css'
-import App from '../components/App'
-// import Main from '../components/Main'
-// import Footer from '../components/Footer'
-
-
+import '../assets/css/main.css'
+import '../assets/css/docs.css'
+import App from './App'
 
 ReactDOM.render(    <BrowserRouter>
                         <App/>
-                    </BrowserRouter>  , document.querySelector('#root') )
+                    </BrowserRouter>  , document.getElementById('root') )

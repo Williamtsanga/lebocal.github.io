@@ -29,9 +29,11 @@ a{
 //     overflow: hidden;
 
 // }
-.logo-img {
+.logo  {
+    img {
     width: 80px;
     height: $MainNav_height;
+}
 }
 .blab {
     height: $MainNav_height;
@@ -287,8 +289,12 @@ footer {
             font-weight: 800;
             font-size: 2vmin;
             &:hover{
-                background-color: #27292e;
+                                background-color: #27292e;
                 cursor: pointer;
+
+            }
+            &:focus{
+                outline: none;
             }
 
         }
@@ -390,11 +396,6 @@ footer {
 }
 
 @media only screen and (min-width: 922px) {
-    .logo-img {
-        // margin-top: 2px;
-        width:5rem;
-        height:78px;
-    }
     header {
         position: relative;    
     }
@@ -411,7 +412,7 @@ footer {
     .Main-nav {
         border-bottom: 2px red solid;
         display: grid;
-        grid-template-columns: .5fr 1fr .5fr;
+        grid-template-columns: .4fr 1fr .4fr;
         
     }
     
@@ -431,7 +432,7 @@ footer {
             
         }
         li {
-            padding: 32px 0px;
+            padding: 30px 0px;
             border: 0;
                 margin: 0 2px;
     
@@ -439,11 +440,11 @@ footer {
                 height: inherit;
                 color: white;
                 font-size: 1vw;
-                // border: 1px green solid;
+                letter-spacing: 1px;
                 text-decoration: none;
                 text-transform: uppercase;
                 font-weight: bold;
-                padding: 32px;
+                padding: 30px;
                 &:hover{
                     color: #1f0e0e;
                     border-bottom: 2px solid white;

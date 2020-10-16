@@ -1,0 +1,224 @@
+$red-col: rgb(161, 97, 97);
+$black-col:rgb(41, 37, 39);
+
+.Doc {
+    // height: 100vh;
+    // background-color:red;
+}
+.inDoc {
+    display: grid;
+    grid-template-rows: 70px 1fr 60px ;
+}
+.content {
+    position: relative;
+    background-color:$black-col;
+}
+
+.option {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    .innerOption {
+        position: relative;
+        ul {
+            list-style-type: none;
+            padding: 0;   
+            margin: 0;             
+            display: flex;
+            flex-direction: column;
+            color: white;
+            position: relative;
+            // height: 100vh;
+            z-index: 10;
+
+            li {
+                // border: 1px green solid;
+                text-align: center;
+                text-transform: uppercase;
+                user-select: none;
+                cursor: pointer;
+                padding: 10px;
+                font-size: 20px;
+                &:hover {
+                    background-color: red;
+                }
+
+            }
+        }
+    }
+    
+}
+.boule  {
+    // visibility: visible;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    // width: 40px;
+    // height: 40px;
+    // background-color: red;
+    &::after {
+        content: "";
+        background-color: black;
+        opacity: 0;
+        position: relative;
+        display: inline-block;
+        border-radius: 50%;
+        // z-index: -1;
+
+        // width: 284vmax;
+        // height: 284vmax;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        left: 0;
+
+        transform: scale(0);
+        transform-origin: 50% 50%;
+        transition: transform .9s cubic-bezier(0.755, 0.050, 0.855, 0.060),opacity .9s ease-in-out;
+
+        will-change:transform;
+
+
+    }
+}
+.subContent {
+    width: 90%;
+    margin: 0 auto;
+    .search {
+        // height: 20px;
+        position: relative;
+        top:0;
+        transition: top .9s linear .1s;
+        .input {
+            // top: 0;
+            z-index: 10;
+            position: relative;
+            margin: 8vw 0 0 0; 
+            text-align: center;
+        }
+        input {
+            text-align: center;
+            width: 80%;
+            height: 40px;
+            font-size: 20px;
+            padding: 0 15px;
+            border: 0;
+            border-radius: 19px;
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    
+    .boxContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        margin: 8vw 0;
+        .box {
+            padding: 20px;
+            margin: 8px;
+            box-shadow:  0 6px 20px 0 $red-col;
+            height: 15rem;
+
+        }
+        .innerBox {
+            cursor: pointer;
+            // border: 2px green dotted;
+            // height: 200px;
+            // width: 40vmax;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // margin:  0 auto;
+            // justify-content: center;    
+    
+            img {
+                // align-self: flex-start;
+                width: 100px;
+                margin: 20px 0;
+                height:100px;
+                border-radius: 50%;
+            }
+            .title {
+                color: white;
+                font-weight: bold;
+                font-size: 19px;
+                text-transform: uppercase;
+                margin-top: 20px;
+                user-select: none;
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+    
+}
+
+.search--focus {
+
+    .option {
+        visibility: visible;
+        .boule {
+            &::after {
+                opacity: 0.8;
+                transform: scale(100);
+            }
+        }
+    }
+    
+
+}
+
+.docFoot {
+    background-color: $red-col;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+
+}
+.docHead {
+    background-color: $red-col;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a {
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 19px;
+        color: white;
+    }
+}
+@media only screen and (min-width: 1067px) {
+        .option {
+            visibility: visible;
+        }
+    
+    .docHead {
+        a {
+            font-size: 36px;
+        }
+    }
+    .subContent {
+        width: 80%;
+        .boxContainer{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            // margin: 15px 0;
+            .box {
+                box-shadow:  0 6px 20px 0 rgb(82, 49, 49);
+                // border: 2px green dotted;
+                // height: 200px;
+                // width: 40vmax;
+                // padding: 30px;
+                // margin: 18px;
+                &:hover {
+                    box-shadow:  0 6px 20px 0 $red-col;
+
+                }
+            }    
+    
+        }
+    }
+}

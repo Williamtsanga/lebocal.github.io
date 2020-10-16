@@ -12,7 +12,7 @@ a {
   text-decoration: none;
 }
 
-.logo-img {
+.logo img {
   width: 80px;
   height: 5rem;
 }
@@ -300,6 +300,10 @@ footer {
   cursor: pointer;
 }
 
+.newsletter .but button:focus {
+  outline: none;
+}
+
 .text {
   color: white;
 }
@@ -406,10 +410,6 @@ footer {
 }
 
 @media only screen and (min-width: 922px) {
-  .logo-img {
-    width: 5rem;
-    height: 78px;
-  }
   header {
     position: relative;
   }
@@ -431,8 +431,8 @@ footer {
     border-bottom: 2px red solid;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: .5fr 1fr .5fr;
-        grid-template-columns: .5fr 1fr .5fr;
+    -ms-grid-columns: .4fr 1fr .4fr;
+        grid-template-columns: .4fr 1fr .4fr;
   }
   nav {
     display: -webkit-box;
@@ -458,7 +458,7 @@ footer {
     list-style-type: none;
   }
   nav li {
-    padding: 32px 0px;
+    padding: 30px 0px;
     border: 0;
     margin: 0 2px;
   }
@@ -466,10 +466,11 @@ footer {
     height: inherit;
     color: white;
     font-size: 1vw;
+    letter-spacing: 1px;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 32px;
+    padding: 30px;
   }
   nav li a:hover {
     color: #1f0e0e;
@@ -484,4 +485,4 @@ footer {
         grid-template-rows: 12vw 1fr .1fr;
   }
 }
-/*# sourceMappingURL=mob.css.map */
+/*# sourceMappingURL=main.css.map */
