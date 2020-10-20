@@ -24,9 +24,10 @@ class Header extends React.Component {
     componentWillUnmount() {
         const { mobNav : {active} } = this.state
 
-        document.querySelector("html").style.overflow = ''
+        // document.querySelector("html").style.overflow = ''
         document.body.style.overflow = ''
-        this.MobUl.current.hidden = active
+        // console.log(this.MobUl)
+        // this.MobUl.current.hidden = active
         this.setState({ mobNav : {
             active:false,
             Class:''
@@ -50,7 +51,7 @@ class Header extends React.Component {
         handleNavClick = () => {
             const { mobNav : {active} } = this.state
             if (active) {
-                document.querySelector("html").style.overflow = ''
+                // document.querySelector("html").style.overflow = ''
                 document.body.style.overflow = ''
                 this.MobUl.current.hidden = active
                 this.setState({ mobNav : {
@@ -58,7 +59,7 @@ class Header extends React.Component {
                     Class:''
                 } })
             } else {
-                document.querySelector("html").style.overflow = 'hidden'
+                // document.querySelector("html").style.overflow = 'hidden'
                 document.body.style.overflow = 'hidden'
                 this.MobUl.current.hidden = active
                 this.setState({ mobNav : {
@@ -76,7 +77,7 @@ class Header extends React.Component {
                 <nav>
                 <ul>
                     <li><NavLink activeClassName='active' exact to={'/'}  >Home</NavLink></li>
-                    <li><NavLink activeClassName='active' to={'/mag'} >Magizine</NavLink></li>
+                    <li><NavLink activeClassName='active' to={'/mag'} >Magazins</NavLink></li>
                     <li><NavLink activeClassName='active' to={'/doc'} >Documents</NavLink></li>
                     <li><NavLink activeClassName='active' to={'/about'} >About us</NavLink></li>
                 </ul>
@@ -86,7 +87,7 @@ class Header extends React.Component {
             <nav id="nav" className={`nav nav--${Class}`} role="navigation" >
                 <ul className="nav__menu" id="menu" tabIndex="-1" ref={this.MobUl} aria-label="main navigation" hidden>
                     <li className="nav__item"  ><NavLink exact activeClassName='active' className={"nav__link"} to={'/'}  >Home</NavLink></li>
-                    <li className="nav__item"><NavLink activeClassName='active' className={"nav__link"} to={'/mag'} >Magizine</NavLink></li>
+                    <li className="nav__item"><NavLink activeClassName='active' className={"nav__link"} to={'/mag'} >Magazins</NavLink></li>
                     <li className="nav__item"><NavLink activeClassName='active' className={"nav__link"} to={'/doc'} >Documents</NavLink></li>
                     <li className="nav__item"><NavLink activeClassName='active' className={"nav__link"} to={'/about'} >About us</NavLink></li>
                 </ul>

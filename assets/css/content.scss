@@ -1,0 +1,13 @@
+main {
+    border:  1px red solid;
+    width: 90%;
+    margin: 10% auto;
+    display:  grid;
+    grid-template-rows: 1fr 1fr ;
+}
+aside {
+    grid-row: 2/2;
+}
+.mainContent {
+    grid-row: 1/2;
+}
